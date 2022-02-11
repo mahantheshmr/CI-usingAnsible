@@ -46,8 +46,9 @@ pipeline {
                  
              
                
-               //sh "ansible-playbook main.yml -i inventories/dev/hosts --user jenkins --key-file ~/.ssh/id_rsa"
-                sh "ansible-playbook main.yml -i inventories/dev/hosts"
+               sh "ansible-playbook main.yml -i inventories/dev/hosts --user jenkins --key-file ~/.ssh/id_rsa"
+               // sh "ansible-playbook main.yml -i inventories/dev/hosts"
+               //ansiblePlaybook credentialsId: 'deploy_server', disableHostKeyChecking: true, extras:"-e DOCKER_TAG=${DOCKER_TAG}", installation: 'Ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
                             
             
             }
