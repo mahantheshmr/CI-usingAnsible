@@ -47,8 +47,8 @@ pipeline {
              
                
                //sh "ansible-playbook main.yml -i inventories/dev/hosts --user jenkiins --key-file ~/.ssh/id_rsa"
-                sh "ansible-playbook main.yml -i inventories/dev/hosts -u ec2-user"
-               //ansiblePlaybook credentialsId: 'deploy_server', disableHostKeyChecking: true, extras:"-e DOCKER_TAG=${DOCKER_TAG}", installation: 'Ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
+               // sh "ansible-playbook main.yml -i inventories/dev/hosts -u ec2-user"
+               ansiblePlaybook credentialsId: 'deploy_server', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventories/dev/hosts', playbook: 'main.yml'
                             
             
             }
